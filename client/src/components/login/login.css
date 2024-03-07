@@ -1,0 +1,149 @@
+body {
+  background: #e1f9f4;
+  width: 1440px;
+  height: 1024px;
+  top: -721px;
+  left: -7621px;
+}
+
+.login {
+  position: absolute;
+  width: 564px;
+  height: 583px;
+  top: 220px;
+  left: 438px;
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+}
+
+.logotxt {
+  position: absolute;
+  width: 92px;
+  height: 18px;
+  top: 67px;
+  left: 236px;
+
+  font-family: Open sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: left;
+
+  color: #4c57b6;
+}
+.Signuptxt {
+  position: absolute;
+  top: 523px;
+  left: 251px;
+
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: left;
+  color: #4c57b6;
+}
+.formbox {
+  position: absolute;
+  top: 138px;
+  left: 57px;
+  background-color: #ffffff;
+  padding: 0px;
+  width: 450px;
+  height: 354px;
+
+  border-radius: 5px;
+}
+
+.topformtxt {
+  position: absolute;
+  width: 328px;
+  height: 22px;
+
+  opacity: 60%;
+  top: 0px;
+  left: 81px;
+}
+
+.form-login {
+  position: absolute;
+}
+.userid-login {
+  position: absolute;
+  top: 76px;
+  left: 0px;
+  width: 450px;
+  height: 54px;
+
+  border-radius: 5px;
+  border: 1px;
+
+  border: 1px solid #e2e2e2;
+}
+.password-login {
+  position: absolute;
+  top: 164px;
+  left: 0px;
+  width: 450px;
+  height: 54px;
+
+  border-radius: 5px;
+  border: 1px;
+
+  border: 1px solid #e2e2e2;
+}
+
+.button-login-form {
+  position: absolute;
+  top: 278px;
+  left: 0px;
+  width: 450px;
+  height: 54px;
+
+  border-radius: 5px;
+  border: 1px;
+  background: #4c57b6;
+}
+.button-txt {
+  color: #ffffff;
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: center;
+}
+.signup-txt-outside-form {
+  padding: 0px;
+  position: absolute;
+  width: 400px;
+  height: 22px;
+  top: 885px;
+  left: 583px;
+}
+.Ptxt1 {
+  font-family: Open sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  width: 200px;
+  height: 22px;
+
+  opacity: 60%;
+}
+.Ptxt2 {
+  font-family: Open sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.25px;
+  margin-top: -40px;
+  padding-left: 192px;
+  width: 66px;
+  height: 22px;
+  color: #4c57b6;
+}
