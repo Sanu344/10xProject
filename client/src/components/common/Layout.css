@@ -1,0 +1,182 @@
+body {
+  background-color: #ffffff;
+}
+
+.user_id {
+  position: absolute;
+  width: 165px;
+  height: 25px;
+  margin-top: 0px;
+  left: 300px;
+  color: #b4b4c6;
+
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.user_name {
+  width: 101px;
+  height: 28px;
+  margin-top: 15px;
+  padding-left: 1300px;
+  color: #a6a6a6;
+
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.hori {
+  border: 2px solid #d5f8f1;
+}
+.sideNavBar {
+  background: #e1f9f4;
+  width: 245px;
+  height: 1080px;
+  margin-top: -156px;
+}
+.logo {
+  width: 75px;
+  height: 44px;
+  top: -70px;
+  padding-top: 60px;
+  left: -130px;
+  color: #1a1b1c;
+
+  font-family: Open sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+nav ul {
+  width: 172px;
+  height: 385px;
+  padding-top: 120px;
+  padding-left: 40px;
+  color: #aaaaaa;
+  list-style-type: none;
+}
+
+.property {
+  padding-bottom: 18px;
+  font-family: Open sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2289ff;
+}
+
+.list_items {
+  padding-bottom: 18px;
+  font-family: Open sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #aaaaaa;
+}
+
+.search_bar {
+  width: 260px;
+  height: 50px;
+  margin-left: 270px;
+  margin-top: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 29px;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 20px #e6e6e6;
+  color: #bdbdbd;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.Add_property {
+  width: 160px;
+  height: 50px;
+  top: 181px;
+  margin-left: 742px;
+  font-family: Open sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  background-color: #6ab4f8;
+  color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 29px;
+  padding-left: 13px;
+  box-shadow: 10px 10px 20px #e6e6e6;
+}
+
+.list_items_bell {
+  position: absolute;
+  width: 24px;
+  height: 21px;
+  top: 181px;
+  left: 17px;
+}
+.property-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 123px;
+  left: 16px;
+  color: #2289ff;
+}
+.recieved-interest-icon {
+  position: absolute;
+  width: 24px;
+  height: 21px;
+  top: 231px;
+  left: 17px;
+}
+.sent-interest-icon {
+  position: absolute;
+  width: 24px;
+  height: 21px;
+  top: 285px;
+  left: 17px;
+}
+.Property-views-icon {
+  position: absolute;
+  width: 24px;
+  height: 21px;
+  top: 339px;
+  left: 17px;
+}
+.gotag {
+  position: absolute;
+  width: 24px;
+  height: 21px;
+  top: 393px;
+  left: 17px;
+}
+.CiUser {
+  position: absolute;
+  width: 18.48px;
+  height: 22.23px;
+  top: 17.35px;
+  left: 1301.55px;
+  border: 1px;
+}
+.FaAngleDown {
+  position: absolute;
+  width: 13.48px;
+  height: 22.23px;
+  top: 20.35px;
+  left: 1395.55px;
+  border: 1px;
+}

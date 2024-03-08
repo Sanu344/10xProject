@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 
-function Login() {
+function Login({ onclick }) {
   return (
     <>
       <div className="login">
@@ -10,7 +10,7 @@ function Login() {
           <p className="topformtxt">
             Enter your credentials to access your account
           </p>
-          <form className="form-login">
+          <form className="form-login" onSubmit={onclick}>
             <input
               type="text"
               className="userid-login"
