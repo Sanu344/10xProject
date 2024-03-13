@@ -1,0 +1,93 @@
+const mongoose = require("mongoose");
+const joi = require("joi");
+
+const schema = new mongoose.Schema({
+  ppdid: { type: String },
+  image: { type: String },
+  propertytype: { type: String, require: true },
+  mobile: { type: Number, require: true },
+  area: { type: Number, required: true },
+  views: { type: Number },
+  status: { type: String }, //////////////////////////--------------------------
+  daysleft: { type: Number },
+  negotiable: { type: String, require: true },
+  price: { type: Number, require: true },
+  ownership: { type: String, require: true },
+  propertyage: { type: Number, require: true },
+  propertyapproved: { type: String, require: true },
+  propertydescription: { type: String, require: true },
+  bankloan: { type: Number, require: true },
+  length: { type: Number, require: true },
+  breadth: { type: Number, require: true },
+  areaunit: { type: String, require: true },
+  numberofbhk: { type: Number, require: true },
+  numberoffloor: { type: Number, require: true },
+  attached: { type: String, require: true },
+  westerntoilet: { type: String, require: true },
+  furnished: { type: String, require: true },
+  carparking: { type: String, require: true },
+  lift: { type: String, require: true },
+  electricity: { type: String, require: true },
+  facing: { type: String, require: true },
+  name: { type: String, require: true },
+  postedby: { type: String, require: true },
+  saletype: { type: String, require: true },
+  featuredpackage: { type: String, require: true },
+  ppdpackage: { type: String, require: true },
+  email: { type: String, require: true },
+  city: { type: String, require: true },
+  pincode: { type: Number, require: true },
+  adress: { type: String, require: true },
+  landmark: { type: String, require: true },
+  latitude: { type: String, require: true },
+  longitude: { type: String, require: true },
+});
+
+const Property = new mongoose.model("properties", schema);
+
+function validate(body) {
+  const schema = joi.object({
+    ppdid: joi.string(),
+    image: joi.string(),
+    propertytype: joi.string().required(),
+    mobile: joi.number().required(),
+    area: joi.number().required(),
+    views: joi.number(),
+    status: joi.string(), //////////////////////////--------------------------
+    daysleft: joi.number(),
+    negotiable: joi.string().required(),
+    price: joi.number().required(),
+    ownership: joi.string().required(),
+    propertyage: joi.number().required(),
+    propertyapproved: joi.string().required(),
+    propertydescription: joi.string().required(),
+    bankloan: joi.number().required(),
+    length: joi.number().required(),
+    breadth: joi.number().required(),
+    areaunit: joi.string().required(),
+    numberofbhk: joi.number().required(),
+    numberoffloor: joi.number().required(),
+    attached: joi.string().required(),
+    westerntoilet: joi.string().required(),
+    furnished: joi.string().required(),
+    carparking: joi.string().required(),
+    lift: joi.string().required(),
+    electricity: joi.string().required(),
+    facing: joi.string().required(),
+    name: joi.string().required(),
+    postedby: joi.string().required(),
+    saletype: joi.string().required(),
+    featuredpackage: joi.string().required(),
+    ppdpackage: joi.string().required(),
+    email: joi.string().required(),
+    city: joi.string().required(),
+    pincode: joi.number().required(),
+    adress: joi.string().required(),
+    landmark: joi.string().required(),
+    latitude: joi.string().required(),
+    longitude: joi.string().required(),
+  });
+  return schema.validate(body);
+}
+
+module.exports = { Property, validate };

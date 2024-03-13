@@ -1,125 +1,116 @@
-body{
-    background-color:  #E1F9F4; 
+.bodys {
+  background: #e1f9f4;
+  width: 1605px;
+  height: 1024px;
 }
 
-.background{
-    position: absolute;
+.background {
+  position: absolute;
 }
 
-
-.signUpPage{
-    width: 564px;
-    height: 520px;
-    margin-top: 90px;
-    margin-left: 438px;
-    border-radius: 10px;
-    background-color: #FFFFFF;
+.signUpPage {
+  width: 564px;
+  height: 520px;
+  margin-top: 90px;
+  margin-left: 438px;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
+.logo {
+  position: absolute;
+  width: 450px;
+  height: 421px;
+  padding-top: 35px;
+  left: 495px;
+  border-radius: 5px;
+  border: 1px;
+  margin-left: 200px;
 
-.logo{
-    position: absolute;
-    width: 450px;
-    height: 421px;
-    padding-top: 35px;
-    left: 495px;
-    border-radius: 5px;
-    border: 1px;
-    margin-left: 200px;
-
-    font-family: Open sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0.25px;
-    text-align: left;
-    color: #4C57B6;
+  font-family: Open sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: left;
+  color: #4c57b6;
 }
 
-.newAccount{
-    position: absolute;
-    width: 450px;
-    height: 421px;
-    padding-top: 120px;
-    left: 495px;
-    border-radius: 5px;
-    border: 1px;
-    margin-left: 180px;
-    opacity:60%;
+.newAccount {
+  position: absolute;
+  width: 450px;
+  height: 421px;
+  padding-top: 120px;
+  left: 495px;
+  border-radius: 5px;
+  border: 1px;
+  margin-left: 180px;
+  opacity: 60%;
 
-    font-family: Open sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0.25px;
-    text-align: left;
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.25px;
+  text-align: left;
 }
 
-
-.formPage{
-    position: absolute;
-    width: 450px;
-    height: 291px;
-    top: 280px;
-    left: 495px;
-    border-radius: 5px;
-    border: 1px;
+.formPage {
+  position: absolute;
+  width: 450px;
+  height: 291px;
+  top: 280px;
+  left: 495px;
+  border-radius: 5px;
+  border: 1px;
 }
 
-form input{
-    width: 450px;
-    height: 48px;
-    top: 589px;
-    left: 495px;
-    border-radius: 5px;
-    border: 1px solid #E2E2E2;
-    margin-top: 17px;
-    padding-left: 20px;
+form input {
+  width: 450px;
+  height: 48px;
+  top: 589px;
+  left: 495px;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  margin-top: 17px;
+  padding-left: 20px;
 
-    font-family: Open sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0.25px;
-    text-align: left;
-
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: left;
 }
 
-form button{
-    width: 474px;
-    height: 48px;
-    top: 668px;
-    left: 495px;
-    margin-top: 15px;
-    background-color: #4C57B6;
-    color: white;
+form button {
+  width: 474px;
+  height: 48px;
+  top: 668px;
+  left: 495px;
+  margin-top: 15px;
+  background-color: #4c57b6;
+  color: white;
 
-    font-family: Open sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 18px;
-    letter-spacing: 0.25px;
-    text-align: center;
-
+  font-family: Open sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: center;
 }
 
-.signin{
-    width: 59px;
-    height: 22px;
-    margin-top: 40px;
-    padding-left: 702px;
-    
-    font-family: Open sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 22px;
-    letter-spacing: 0.25px;
-    text-align: center;
-    color: #352D66;
+.signin {
+  width: 759px;
+  height: 22px;
+  margin-top: 40px;
+  padding-left: 702px;
 
+  font-family: Open sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  color: #352d66;
 }
-
-
-
-
-

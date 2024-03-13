@@ -1,9 +1,10 @@
-body {
+.body {
+  position: relative;
+  top: 0px;
+  bottom: 0px;
   background: #e1f9f4;
-  width: 1440px;
+  width: 1605px;
   height: 1024px;
-  top: -721px;
-  left: -7621px;
 }
 
 .login {
@@ -35,14 +36,14 @@ body {
 .Signuptxt {
   position: absolute;
   top: 523px;
-  left: 251px;
+  left: 255px;
 
   font-family: Open sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: 0.25px;
-  text-align: left;
+  text-align: center;
   color: #4c57b6;
 }
 .formbox {
@@ -98,6 +99,7 @@ body {
 .button-login-form {
   position: absolute;
   top: 278px;
+  padding-top: 15px;
   left: 0px;
   width: 450px;
   height: 54px;
@@ -118,7 +120,7 @@ body {
 .signup-txt-outside-form {
   padding: 0px;
   position: absolute;
-  width: 400px;
+  width: 500px;
   height: 22px;
   top: 885px;
   left: 583px;
@@ -143,7 +145,7 @@ body {
   letter-spacing: 0.25px;
   margin-top: -40px;
   padding-left: 192px;
-  width: 66px;
+  width: 500px;
   height: 22px;
   color: #4c57b6;
 }
