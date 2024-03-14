@@ -54,4 +54,12 @@ prperty.post("/search", auth, async (req, res) => {
   }
 });
 
+prperty.patch("/views", async (req, res) => {
+  const obj = await Property.findOne({ ppdid: req.body.ppdid });
+  obj.views += 1;
+  const result = await obj.save();
+
+  res.send({ status: true });
+});
+
 module.exports = prperty;

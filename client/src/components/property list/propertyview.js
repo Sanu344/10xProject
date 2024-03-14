@@ -50,6 +50,22 @@ function PropertyView() {
         }
       });
   }
+  ////////
+  function updateview(ppdid) {
+    fetch("http://localhost:3030/prop/views", {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ppdid: ppdid,
+      }),
+    })
+      .then((data) => data.json())
+      .then();
+  }
+  //////
 
   /////
   useEffect(() => {
@@ -197,6 +213,7 @@ function PropertyView() {
                           onClick={() => {
                             setIconclick(true);
                             setDataPass(items);
+                            updateview(items.ppdid);
                           }}
                           className={styles.editicon}
                         />
