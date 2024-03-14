@@ -120,78 +120,91 @@ function Ppdinfo() {
           {...register("length")}
           className={styles.ip1}
           placeholder="Length"
+          required
         />
         <input
           type="text"
           {...register("breadth")}
           className={styles.ip2}
           placeholder="Bredth"
+          required
         />
         <input
           type="text"
           {...register("area")}
           className={styles.ip3}
           placeholder="Total Area"
+          required
         />
         <input
           type="text"
           {...register("areaunit")}
           className={styles.ip4}
           placeholder="Area Unit"
+          required
         />
         <input
           type="text"
           {...register("numberofbhk")}
           className={styles.ip5}
           placeholder="No of BHK"
+          required
         />
         <input
           type="text"
           {...register("numberoffloor")}
           className={styles.ip6}
           placeholder="No of Floor"
+          required
         />
         <input
           type="text"
           {...register("attached")}
           className={styles.ip7}
           placeholder="Select Attached"
+          required
         />
         <input
           type="text"
           {...register("westerntoilet")}
           className={styles.ip8}
           placeholder="Select Western Toilet"
+          required
         />
         <input
           type="text"
           {...register("furnished")}
           className={styles.ip9}
           placeholder="Select Furnished"
+          required
         />
         <input
           type="text"
           {...register("carparking")}
           className={styles.ip10}
           placeholder="Select Car Parking"
+          required
         />
         <input
           type="text"
           {...register("lift")}
           className={styles.ip11}
           placeholder="Select Lift"
+          required
         />
         <input
           type="text"
           {...register("electricity")}
           className={styles.ip12}
           placeholder="Example: 3 phase "
+          required
         />
         <input
           type="text"
           {...register("facing")}
           className={styles.ip13}
           placeholder="Select Facing"
+          required
         />
         <button type="submit" className={styles.sndc}>
           Save & Continue

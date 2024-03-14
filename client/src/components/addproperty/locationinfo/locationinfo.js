@@ -20,38 +20,55 @@ function Locinfo() {
   const onSubmit = (data) => {
     localStorage.removeItem("locinfo");
     localStorage.setItem("locinfo", JSON.stringify(data));
+    if (
+      localStorage.getItem("basicinfo") &&
+      localStorage.getItem("geninfo") &&
+      localStorage.getItem("pptdinfo") &&
+      localStorage.getItem("locinfo")
+    ) {
+      const basicinfo = JSON.parse(localStorage.getItem("basicinfo"));
+      const geninfo = JSON.parse(localStorage.getItem("geninfo"));
+      const ppdinfo = JSON.parse(localStorage.getItem("pptdinfo"));
+      const locinfo = JSON.parse(localStorage.getItem("locinfo"));
+      let form = { ...basicinfo, ...geninfo, ...ppdinfo, ...locinfo };
+      console.log(form);
 
-    const basicinfo = JSON.parse(localStorage.getItem("basicinfo"));
-    const geninfo = JSON.parse(localStorage.getItem("geninfo"));
-    const ppdinfo = JSON.parse(localStorage.getItem("pptdinfo"));
-    const locinfo = JSON.parse(localStorage.getItem("locinfo"));
-    let form = { ...basicinfo, ...geninfo, ...ppdinfo, ...locinfo };
-    console.log(form);
-    form = { ...form, image: "image" };
-
-    fetch("http://localhost:3030/prop/search/add", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    })
-      .then((data) => data.json())
-      .then((response) => {
-        if (response.setalert === true) {
-          alert(JSON.stringify(response.message));
-        } else {
-          if (response.data.length > 0) {
-            alert(JSON.stringify("added new property"));
-            navigate("/pptv");
-            console.log(response.data);
+      fetch("http://localhost:3030/prop/search/add", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          token: localStorage.getItem("happyCat"),
+          form: form,
+        }),
+      })
+        .then((data) => data.json())
+        .then((response) => {
+          if (response.setalert === true) {
+            alert(JSON.stringify(response.message));
           } else {
-            const npRes = [];
-            console.log(npRes);
+            if (response.data.length > 0) {
+              alert(JSON.stringify("added new property"));
+
+              localStorage.removeItem("basicinfo");
+              localStorage.removeItem("geninfo");
+              localStorage.removeItem("pptdinfo");
+              localStorage.removeItem("locinfo");
+
+              navigate("/pptv");
+            } else {
+              const npRes = [];
+              console.log(npRes);
+            }
           }
-        }
-      });
+        });
+    } else {
+      alert(
+        "Please enter all the deatails for Basic Info, Property details, General Info, Location Info again"
+      );
+    }
   };
 
   return (
@@ -155,7 +172,7 @@ function Locinfo() {
         />
         <input
           type="text"
-          {...register("area")}
+          {...register("locationArea")}
           className={styles.ip3}
           placeholder="Area"
         />

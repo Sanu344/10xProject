@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { IoEye } from "react-icons/io5";
+import { IoEyeOff } from "react-icons/io5";
+
 function Login({ onclick }) {
+  const [click, setClick] = useState(false);
   const { register, handleSubmit } = useForm();
   const nav = useNavigate();
   const onSubmit = (data) => {
@@ -22,7 +26,7 @@ function Login({ onclick }) {
           // console.log(response.token);
           localStorage.setItem("happyCat", response.token);
           localStorage.setItem("allowed", true);
-
+          localStorage.setItem("kittytag", response.email);
           nav("/pptv");
         } else {
           alert(JSON.stringify(response.message));
@@ -36,6 +40,10 @@ function Login({ onclick }) {
         <div className="login">
           <h1 className="logotxt">Logo</h1>
           <div className="formbox">
+            <div onClick={() => setClick(!click)} className="react-icon1">
+              {click === true ? <IoEye /> : <IoEyeOff />}
+            </div>
+
             <p className="topformtxt">
               Enter your credentials to access your account
             </p>
@@ -48,7 +56,7 @@ function Login({ onclick }) {
                 required
               />
               <input
-                type="password"
+                type={click === true ? "text" : "password"}
                 {...register("password")}
                 className="password-login"
                 placeholder="    Password"

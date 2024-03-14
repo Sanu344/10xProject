@@ -3,17 +3,29 @@ const prperty = express.Router();
 const { Property, validate } = require("../model/properties");
 const auth = require("../middlewares/authM");
 
-prperty.post("/search/add", async (req, res) => {
+prperty.post("/search/add", auth, async (req, res) => {
   //validate the data
   //send error if any
   console.log("data recieved");
-  const { error } = validate(req.body);
+  const { error } = validate(req.body.form);
   if (error)
     return res.send({ setalert: true, message: error.details[0].message });
   console.log("data recieved");
   //saving data
-  const property = new Property(req.body);
+
+  const c = (await Property.find().count()) + 1;
+  const ppdid = "PPD".concat(c);
+
+  const property = new Property({
+    ppdid: ppdid,
+    views: 0,
+    daysleft: 0o5,
+    status: "Unsold",
+    ...req.body.form,
+  });
+
   let arrayOfobjects = [];
+
   try {
     const data = await property.save();
     const data3 = await Property.find();
@@ -24,7 +36,7 @@ prperty.post("/search/add", async (req, res) => {
   }
 });
 
-prperty.get("/all", async (req, res) => {
+prperty.post("/all", auth, async (req, res) => {
   try {
     const data = await Property.find();
     res.send({ setalert: false, data: data });
@@ -33,7 +45,7 @@ prperty.get("/all", async (req, res) => {
   }
 });
 
-prperty.post("/search", async (req, res) => {
+prperty.post("/search", auth, async (req, res) => {
   try {
     const data = await Property.find({ ppdid: req.body.searchItem });
     res.send({ setalert: false, data: data });

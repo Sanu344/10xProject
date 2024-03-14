@@ -13,11 +13,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { FaWindowClose } from "react-icons/fa";
 function PropertyView() {
   const naigate = useNavigate();
   const [propertyList, setPropertyList] = useState([]);
   const [search, setSearch] = useState("");
   const [click, setClick] = useState(false);
+  const [iconclick, setIconclick] = useState(false);
+  const [dataPass, setDataPass] = useState();
 
   function handleSearch(e) {
     e.preventDefault();
@@ -27,7 +30,10 @@ function PropertyView() {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ searchItem: search }),
+      body: JSON.stringify({
+        token: localStorage.getItem("happyCat"),
+        searchItem: search,
+      }),
     })
       .then((data) => data.json())
       .then((response) => {
@@ -48,11 +54,14 @@ function PropertyView() {
   /////
   useEffect(() => {
     fetch("http://localhost:3030/prop/all", {
-      method: "GET",
+      method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        token: localStorage.getItem("happyCat"),
+      }),
     })
       .then((data) => data.json())
       .then((response) => {
@@ -105,7 +114,9 @@ function PropertyView() {
       </div>
 
       <div className={styles.userid}>
-        <p className={styles.useridp}>USER ID :</p>
+        <p className={styles.useridp}>
+          USER ID :{localStorage.getItem("kittytag")}
+        </p>
       </div>
       <div className={styles.username}>
         <p className={styles.usernamep}>User Name</p>
@@ -168,7 +179,9 @@ function PropertyView() {
               return (
                 <tr key={index} className={styles.disele}>
                   <td className={styles.td}>{items.ppdid}</td>
-                  <td className={styles.td}>{items.image}</td>
+                  <td className={styles.td}>
+                    <img width={50} height={50} src={items.image} alt="img" />
+                  </td>
                   <td className={styles.td}>{items.propertytype}</td>
                   <td className={styles.td}>{items.mobile}</td>
                   <td className={styles.td}>{items.area}</td>
@@ -177,14 +190,22 @@ function PropertyView() {
                     {items.status}
                   </td>
                   <td className={styles.td}>{items.daysleft}</td>
-                  <td className={styles.td}>
+                  <td className={styles.td} key={index}>
                     {
                       <>
-                        <MdRemoveRedEye className={styles.editicon} />
+                        <MdRemoveRedEye
+                          onClick={() => {
+                            setIconclick(true);
+                            setDataPass(items);
+                          }}
+                          className={styles.editicon}
+                        />
 
                         <MdEdit
                           className={styles.editicon2}
-                          onClick={() => console.log("clicked")}
+                          onClick={() => {
+                            console.log("clicked");
+                          }}
                         />
                       </>
                     }
@@ -205,6 +226,140 @@ function PropertyView() {
         >
           Logout
         </button>
+      )}
+      {iconclick && (
+        <div className={styles.viewInfo}>
+          <FaWindowClose
+            onClick={() => setIconclick(false)}
+            className={styles.closebtn}
+          />{" "}
+          <div className={styles.displaycontent}>
+            <table>
+              <tbody>
+                <tr className={styles.tablerow}>
+                  <td>PPDID : {dataPass.ppdid}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Property Type : {dataPass.propertytype}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Negotiable : {dataPass.negotiable}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Price : {dataPass.price}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Ownweship : {dataPass.ownership}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Property Age : {dataPass.propertyage}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Property Approved : {dataPass.propertyapproved}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Property description : {dataPass.propertydescription}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Bank Loan : {dataPass.bankloan}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Length : {dataPass.length}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Breadth : {dataPass.breadth}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Total Area : {dataPass.area}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Area Unit : {dataPass.areaunit}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>No of BHK : {dataPass.numberofbhk}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Number of Floor : {dataPass.numberoffloor}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Attached : {dataPass.attached}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Western Tiolet : {dataPass.westerntoilet}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Furnished : {dataPass.furnished}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Car Parking : {dataPass.carparking}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Lift : {dataPass.lift}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Electricity : {dataPass.electricity}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Facing : {dataPass.facing}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Name : {dataPass.name}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Mobile : {dataPass.mobile}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Posted By : {dataPass.postedby}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Sale Type : {dataPass.saletype}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Featured Package : {dataPass.featuredpackage}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>PPD Package : {dataPass.ppdpackage}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Email : {dataPass.email}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>City : {dataPass.city}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Pincode : {dataPass.pincode}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Location : {dataPass.locationArea}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Address : {dataPass.address}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Landmark : {dataPass.landmark}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Latitude : {dataPass.latitude}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Longitude : {dataPass.longitude}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Views : {dataPass.views}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Status : {dataPass.status}</td>
+                </tr>
+                <tr className={styles.tablerow}>
+                  <td>Days Left : {dataPass.daysleft}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div className={styles.imageDisplay}>
+              <img src={dataPass.image} alt="" />
+            </div>
+          </div>
+        </div>
       )}
     </>
   );

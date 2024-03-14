@@ -37,10 +37,11 @@ auth.post("/", async (req, res) => {
   const token = jwt.sign({ email: user.email }, config.get("privateKey"));
 
   //to add list of properties of the user
-
+  console.log(user.email);
   res.send({
     setalert: true,
     message: "Login successful",
+    email: user.email,
     status: true,
     token: token,
   });

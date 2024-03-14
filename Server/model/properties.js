@@ -4,6 +4,7 @@ const joi = require("joi");
 const schema = new mongoose.Schema({
   ppdid: { type: String },
   image: { type: String },
+  locationArea: { type: String }, ///////////////////////////
   propertytype: { type: String, require: true },
   mobile: { type: Number, require: true },
   area: { type: Number, required: true },
@@ -49,6 +50,7 @@ function validate(body) {
   const schema = joi.object({
     ppdid: joi.string(),
     image: joi.string(),
+    locationArea: joi.string(),
     propertytype: joi.string().required(),
     mobile: joi.number().required(),
     area: joi.number().required(),

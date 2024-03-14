@@ -85,7 +85,7 @@
 }
 .userid {
   position: absolute;
-  width: 165px;
+  width: 377px;
   height: 25px;
   top: 54px;
   left: 351px;
@@ -374,6 +374,7 @@
   background-color: #f5faf5;
   margin: 0px;
   right: 20px;
+  padding-top: 5px;
   text-align: center;
   border-radius: 15px;
 }
@@ -391,4 +392,42 @@
   border: #416899;
   box-shadow: 0px 13px 25px 0px #00000026;
   color: #ffffff;
+}
+.editicon:hover {
+  color: #0000005f;
+}
+.viewInfo {
+  position: absolute;
+  top: 399px;
+  left: 388px;
+  width: 1100px;
+  height: 500px;
+  border-radius: 20px;
+
+  border: 5px solid #284e91;
+  background-color: #fafbfc;
+  padding: 25px;
+  z-index: 9;
+  overflow-y: auto;
+}
+.closebtn {
+  position: absolute;
+  top: 15px;
+  left: 1030px;
+}
+.tablerow {
+  height: 50px;
+  color: black;
+}
+.imageDisplay {
+  position: absolute;
+  overflow-x: auto;
+  overflow-y: auto;
+  top: 35px;
+  left: 450px;
+  width: 597px;
+  height: 377px;
+  background-color: #ffffff;
+  z-index: 10;
+  border-radius: 10px;
 }

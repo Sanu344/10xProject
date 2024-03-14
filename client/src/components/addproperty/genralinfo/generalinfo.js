@@ -17,11 +17,41 @@ function Geninfo() {
 
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
-    localStorage.removeItem("geninfo");
-    localStorage.setItem("geninfo", JSON.stringify(data));
+  //////converting image to base 64
+  // function converToBase64(e) {
+  //   console.log(e);
+  //   var reader = new FileReader();
+  //   reader.readAsDataURL(e.image[0]);
+  //   reader.onload = () => {
+  //     //console.log(reader.result);
+  //     let i = reader.result;
+  //     return i;
+  //   };
+  //   reader.onerror = (error) => {
+  //     console.log("Error: ", error);
+  //   };
+  // }
+  //////
 
-    console.log(localStorage.getItem("basicinfo"));
+  const onSubmit = (data) => {
+    //const i = converToBase64(data);
+    /////
+    var reader = new FileReader();
+    reader.readAsDataURL(data.image[0]);
+    reader.onload = () => {
+      //console.log(reader.result);
+      const i = reader.result;
+      const datai = { ...data, image: i };
+      localStorage.removeItem("geninfo");
+      localStorage.setItem("geninfo", JSON.stringify(datai));
+      console.log(i);
+    };
+    reader.onerror = (error) => {
+      console.log("Error: ", error);
+    };
+    /////
+
+    //console.log(localStorage.getItem("basicinfo"));
     navigate("/loc");
   };
 
@@ -115,38 +145,49 @@ function Geninfo() {
           {...register("name")}
           className={styles.ip1}
           placeholder="Name"
+          required
         />
         <input
           type="text"
           {...register("mobile")}
           className={styles.ip2}
           placeholder="Mobile"
+          required
         />
         <input
           type="text"
           {...register("postedby")}
           className={styles.ip3}
           placeholder="Posted by"
+          required
         />
         <input
           type="text"
           {...register("saletype")}
           className={styles.ip4}
           placeholder="Sale Type"
+          required
         />
         <input
           type="text"
           {...register("featuredpackage")}
           className={styles.ip5}
           placeholder="Featured Package"
+          required
         />
         <input
           type="text"
           {...register("ppdpackage")}
           className={styles.ip6}
           placeholder="PPD Package"
+          required
         />
-        <input type="file" {...register("image")} className={styles.ipimg} />
+        <input
+          type="file"
+          {...register("image")}
+          className={styles.ipimg}
+          required
+        />
         <button type="submit" className={styles.sndc}>
           Save & Continue
         </button>

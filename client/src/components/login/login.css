@@ -149,3 +149,13 @@
   height: 22px;
   color: #4c57b6;
 }
+.react-icon1 {
+  position: absolute;
+  top: 195px;
+  left: 408px;
+  z-index: 5;
+  color: #e2e2e2;
+}
+.react-icon1:hover {
+  color: #000000;
+}
