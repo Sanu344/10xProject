@@ -81,7 +81,7 @@ function validate(body) {
     saletype: joi.string().required(),
     featuredpackage: joi.string().required(),
     ppdpackage: joi.string().required(),
-    email: joi.string().required(),
+    email: joi.string().required().email(),
     city: joi.string().required(),
     pincode: joi.number().required(),
     adress: joi.string().required(),
