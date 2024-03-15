@@ -33,7 +33,7 @@ function Locinfo() {
       let form = { ...basicinfo, ...geninfo, ...ppdinfo, ...locinfo };
       console.log(form);
 
-      fetch("http://localhost:3030/prop/search/add", {
+      fetch("https://realestate-q1pp.onrender.com/prop/search/add", {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -11,7 +11,7 @@ function Login({ onclick }) {
   const nav = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:3030/api/auth", {
+    fetch("https://realestate-q1pp.onrender.com/api/auth", {
       method: "POST",
       headers: {
         Accept: "application/json",

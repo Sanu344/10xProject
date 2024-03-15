@@ -24,7 +24,7 @@ function PropertyView() {
 
   function handleSearch(e) {
     e.preventDefault();
-    fetch("http://localhost:3030/prop/search", {
+    fetch("https://realestate-q1pp.onrender.com/prop/search", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -52,7 +52,7 @@ function PropertyView() {
   }
   ////////
   function updateview(ppdid) {
-    fetch("http://localhost:3030/prop/views", {
+    fetch("https://realestate-q1pp.onrender.com/prop/views", {
       method: "PATCH",
       headers: {
         Accept: "application/json",
@@ -76,7 +76,7 @@ function PropertyView() {
 
   /////
   useEffect(() => {
-    fetch("http://localhost:3030/prop/all", {
+    fetch("https://realestate-q1pp.onrender.com/prop/all", {
       method: "POST",
       headers: {
         Accept: "application/json",

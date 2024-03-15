@@ -14,7 +14,7 @@ function Signup({ status }) {
       password: data.password,
     };
     if (data.password === data.pass) {
-      fetch("http://localhost:3030/api/users/reg", {
+      fetch("https://realestate-q1pp.onrender.com/api/users/reg", {
         method: "POST",
         headers: {
           Accept: "application/json",
