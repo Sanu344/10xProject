@@ -59,11 +59,18 @@ function PropertyView() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        token: localStorage.getItem("happyCat"),
         ppdid: ppdid,
       }),
     })
       .then((data) => data.json())
-      .then();
+      .then((response) => {
+        if (response.status === false) {
+          alert(JSON.stringify(response.message));
+          localStorage.clear();
+          naigate("/");
+        }
+      });
   }
   //////
 
@@ -81,6 +88,11 @@ function PropertyView() {
     })
       .then((data) => data.json())
       .then((response) => {
+        if (response.status === false) {
+          alert(JSON.stringify(response.message));
+          localStorage.clear();
+          naigate("/");
+        }
         if (response.setalert === true) {
           alert(JSON.stringify(response.message));
         } else {
