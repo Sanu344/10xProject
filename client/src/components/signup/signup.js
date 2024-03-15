@@ -77,7 +77,9 @@ function Signup({ status }) {
               </div>
             </div>
           </div>
-          <p className="signin">Sign in</p>
+          <p onClick={() => nav("/")} className="signin">
+            Sign in
+          </p>
         </div>
       </div>
     </>
