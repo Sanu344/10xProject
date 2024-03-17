@@ -85,7 +85,9 @@ function Locinfo() {
         <p className={styles.addnewpropertyp}>ADD NEW PROPERTY</p>
       </div>
       <div className={styles.userid}>
-        <p className={styles.useridp}>USER ID :</p>
+        <p className={styles.useridp}>
+          USER ID : {localStorage.getItem("kittytag")}{" "}
+        </p>
       </div>
       <div className={styles.username}>
         <p className={styles.usernamep}>User Name</p>
