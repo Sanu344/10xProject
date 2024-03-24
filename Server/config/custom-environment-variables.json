@@ -1,3 +1,4 @@
 {
-  "privateKey": "RealEstateKey"
+  "privateKey": "RealEstateKey",
+  "MONGOURL": "DBURL"
 }

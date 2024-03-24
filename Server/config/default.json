@@ -1,3 +1,4 @@
 {
-  "privateKey": ""
+  "privateKey": "",
+  "MONGOURL": "mongodb://localhost:/RealEstate"
 }
